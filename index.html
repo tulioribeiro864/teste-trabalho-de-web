@@ -11,9 +11,10 @@
   <header>
     <div class="prisma"></div>
     <nav>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="#">Serviços</a>
-      <a href="#" id="btnLogin">Login</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="#">Login</a>
     </nav>
     <div class="prisma"></div>
   </header>
@@ -22,7 +23,7 @@
   <section class="hero">
     <h1>Troque serviços <br> dentro da instituição</h1>
     <div class="botoes-hero">
-      <button id="btnCadastro" class="btn-prisma">Cadastre-se</button>
+      <button onclick="window.location.href='cadastro.html'" class="btn-prisma">Cadastre-se</button>
       <button class="btn-prisma">Encontre um serviço</button>
     </div>
   </section>
@@ -59,30 +60,5 @@
     </div>
     <div>Redes sociais</div>
   </footer>
-
-  <!-- MODAL LOGIN -->
-  <div class="modal" id="loginModal">
-    <div class="modal-content anim-login">
-      <h2>Login</h2>
-      <input type="text" placeholder="Usuário">
-      <input type="password" placeholder="Senha">
-      <button>Entrar</button>
-      <button class="close">Fechar</button>
-    </div>
-  </div>
-
-  <!-- MODAL CADASTRO -->
-  <div class="modal" id="cadastroModal">
-    <div class="modal-content anim-cadastro">
-      <h2>Cadastro</h2>
-      <input type="text" placeholder="Nome completo">
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Senha">
-      <button>Cadastrar</button>
-      <button class="close">Fechar</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
