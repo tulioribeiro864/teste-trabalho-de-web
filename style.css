@@ -144,3 +144,43 @@ footer {
   from { transform: scale(0.3); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+/* PÁGINA DE CADASTRO */
+.cadastro-section {
+  background: #2b4a5b;
+  padding: 40px;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  text-align: center;
+}
+.cadastro-section h1 {
+  color: #f1c27d;
+  margin-bottom: 20px;
+}
+.cadastro-form {
+  background: #1f3544;
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+}
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.cadastro-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  flex: 1;
+}
+.cadastro-form p {
+  margin-top: 10px;
+  color: #fff;
+}
+.cadastro-form a {
+  color: #f1c27d;
+  font-weight: bold;
+  text-decoration: none;
+}
+.cadastro-form a:hover {
+  text-decoration: underline;
+}

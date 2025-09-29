@@ -2,34 +2,49 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="catalogo.html">Serviços</a>
-    <a href="login.html">Login</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="prisma"></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Serviços</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="#">Login</a>
+    </nav>
+    <div class="prisma"></div>
+  </header>
 
-<main>
-  <h2>Cadastro</h2>
-  <form id="formCadastro">
-    <input type="text" placeholder="Nome">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Senha">
-    <input type="password" placeholder="Confirmar senha">
-    <button type="submit">Cadastrar</button>
-  </form>
-  <p>Já tem cadastro? <a href="login.html">Entrar</a></p>
-</main>
+  <!-- ÁREA DE CADASTRO -->
+  <section class="cadastro-section">
+    <h1>Cadastro</h1>
+    <form class="cadastro-form">
+      <div class="form-row">
+        <input type="text" placeholder="Nome">
+        <input type="email" placeholder="Email">
+      </div>
+      <div class="form-row">
+        <input type="password" placeholder="Senha">
+        <input type="password" placeholder="Confirmar senha">
+      </div>
+      <button type="submit" class="btn-prisma">Cadastrar</button>
+      <p>Já tem cadastro? <a href="#">Entrar</a></p>
+    </form>
+  </section>
 
-<footer>
-  <p>Contato</p>
-  <p>Redes sociais</p>
-</footer>
-<script src="script.js"></script>
+  <!-- FOOTER -->
+  <footer>
+    <div>Contato</div>
+    <div class="prismas-footer">
+      <div class="prisma"></div>
+      <div class="prisma"></div>
+      <div class="prisma"></div>
+    </div>
+    <div>Redes sociais</div>
+  </footer>
 </body>
 </html>
