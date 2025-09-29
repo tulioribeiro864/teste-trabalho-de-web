@@ -1,30 +1,13 @@
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* GERAL */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1c3648, #2b4a5b);
+  background: #1f3544;
   color: #d9b382;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-main {
-  flex: 1;
-  padding: 30px;
-  text-align: center;
   animation: fadeIn 1s ease-in-out;
-}
-
-h1, h2, h3 {
-  margin-bottom: 15px;
-  text-shadow: 1px 1px 3px #000;
 }
 
 /* HEADER */
@@ -32,24 +15,81 @@ header {
   background: #0a1a33;
   padding: 15px 30px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
-
 header nav a {
   color: #f1c27d;
   margin-left: 20px;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s, transform 0.3s;
+  transition: 0.3s;
+}
+header nav a:hover { color: #fff; }
+
+/* HERO */
+.hero {
+  background: #2b4a5b;
+  text-align: center;
+  padding: 40px 20px;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+}
+.hero h1 { font-size: 2rem; margin-bottom: 20px; }
+.botoes-hero { display: flex; justify-content: center; gap: 20px; }
+
+/* BOTÕES PRISMA */
+.btn-prisma {
+  position: relative;
+  background: #0a1a33;
+  color: #f1c27d;
+  padding: 12px 22px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-prisma::before, .btn-prisma::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #f1c27d;
+}
+.btn-prisma::before { left: -20px; }
+.btn-prisma::after { right: -20px; }
+.btn-prisma:hover {
+  background: #f1c27d;
+  color: #0a1a33;
+  transform: scale(1.08);
 }
 
-header nav a:hover {
-  color: #fff;
-  transform: scale(1.1);
+/* PRISMAS */
+.prisma {
+  width: 20px; height: 20px;
+  background: #f1c27d;
+  transform: rotate(45deg);
+  margin: 0 5px;
+}
+
+/* SERVIÇOS */
+.servicos { padding: 40px 20px; text-align: center; }
+.cards {
+  display: flex; justify-content: center;
+  gap: 20px; margin-top: 20px; flex-wrap: wrap;
+}
+.card {
+  background: #f3e2c0;
+  color: #0a1a33;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 /* FOOTER */
@@ -58,146 +98,49 @@ footer {
   padding: 12px 30px;
   display: flex;
   justify-content: space-between;
-  color: #d9b382;
-  font-size: 14px;
+  align-items: center;
 }
+.prismas-footer { display: flex; }
 
-/* BOTÕES PRISMA */
-button, .btn {
-  background: linear-gradient(135deg, #0a1a33, #1d2f55, #0a1a33);
-  background-size: 300% 300%;
-  color: #f1c27d;
-  padding: 12px 22px;
-  border: 2px solid #f1c27d;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-  font-weight: bold;
-  margin-top: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  animation: prismMove 4s infinite linear;
+/* MODAL */
+.modal {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7); display: none;
+  justify-content: center; align-items: center;
 }
-
-button:hover, .btn:hover {
-  background-position: right center;
+.modal-content {
+  background: #2b4a5b;
+  padding: 20px; border-radius: 12px;
+  width: 300px; text-align: center;
   color: #fff;
-  transform: scale(1.1) rotate(-1deg);
-  box-shadow: 0 0 20px rgba(241, 194, 125, 0.9);
+  animation: fadeIn 0.8s ease;
 }
-
-@keyframes prismMove {
-  0% { background-position: left center; }
-  50% { background-position: right center; }
-  100% { background-position: left center; }
+.modal-content input {
+  width: 90%; padding: 10px; margin: 10px 0;
+  border: none; border-radius: 5px;
 }
-
-/* INPUTS */
-input, textarea {
-  display: block;
-  margin: 12px auto;
-  padding: 10px;
-  width: 80%;
-  border: none;
-  border-radius: 6px;
-  background: #f3e2c0;
-  color: #0a1a33;
-  font-size: 15px;
-  transition: all 0.3s;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  background: #fff8e6;
-  box-shadow: 0 0 12px #f1c27d;
-  transform: scale(1.05);
-}
-
-/* CARDS DE SERVIÇOS */
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: rgba(243, 226, 192, 0.95);
-  color: #0a1a33;
-  padding: 20px;
-  border-radius: 14px;
-  width: 220px;
-  transition: transform 0.4s, box-shadow 0.4s;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.4);
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
-  transform: rotate(25deg);
-  transition: opacity 0.3s;
-  opacity: 0;
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-/* FORMULÁRIOS */
-form {
-  max-width: 420px;
-  margin: 0 auto;
-  background: rgba(20,40,60,0.85);
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-  animation: fadeIn 1s ease-in-out;
-}
-
-form label {
-  display: block;
-  margin: 10px 0 5px;
-  text-align: left;
-  color: #f1c27d;
+.modal-content button {
+  background: #f1c27d; border: none;
+  padding: 10px 20px; margin-top: 10px;
+  cursor: pointer; border-radius: 6px;
   font-weight: bold;
 }
+.modal-content button:hover { background: #fff; }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÕES LOGIN/CADASTRO */
+.anim-login { animation: bounceIn 0.8s ease; }
+.anim-cadastro { animation: zoomIn 0.8s ease; }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(25px); }
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-/* LOGIN/CADASTRO ANIMAÇÃO */
-.success-anim {
-  animation: loginSuccess 1s ease forwards;
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
 }
-
-@keyframes loginSuccess {
-  0% { background-color: rgba(20,40,60,0.85); }
-  50% { background-color: #2ecc71; transform: scale(1.05); }
-  100% { background-color: rgba(20,40,60,0.85); transform: scale(1); }
-}
-
-.fail-anim {
-  animation: loginFail 0.6s ease;
-}
-
-@keyframes loginFail {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-8px); }
-  50% { transform: translateX(8px); }
-  75% { transform: translateX(-8px); }
+@keyframes zoomIn {
+  from { transform: scale(0.3); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }

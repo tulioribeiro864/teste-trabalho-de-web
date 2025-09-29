@@ -2,38 +2,87 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Home - Troca de Serviços</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Troque Serviços</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- HEADER -->
   <header>
+    <div class="prisma"></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="catalogo.html">Serviços</a>
-      <a href="login.html">Login</a>
+      <a href="#">Home</a>
+      <a href="#">Serviços</a>
+      <a href="#" id="btnLogin">Login</a>
     </nav>
+    <div class="prisma"></div>
   </header>
 
-  <main>
-    <h1>Troque serviços dentro da instituição</h1>
-    <div class="botoes-home">
-      <a class="btn" href="cadastro.html">Cadastre-se</a>
-      <a class="btn" href="catalogo.html">Encontre um serviço</a>
+  <!-- FRASE PRINCIPAL -->
+  <section class="hero">
+    <h1>Troque serviços <br> dentro da instituição</h1>
+    <div class="botoes-hero">
+      <button id="btnCadastro" class="btn-prisma">Cadastre-se</button>
+      <button class="btn-prisma">Encontre um serviço</button>
     </div>
+  </section>
 
-    <section class="servicos">
-      <h2>Serviços mais recentes</h2>
-      <div class="cards">
-        <div class="card"><p>Serviço 1</p><button>Reservar</button></div>
-        <div class="card"><p>Serviço 2</p><button>Reservar</button></div>
-        <div class="card"><p>Serviço 3</p><button>Reservar</button></div>
+  <!-- SERVIÇOS -->
+  <section class="servicos">
+    <h2>Serviços mais recentes</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Aulas de Violão 🎸</h3>
+        <p>Aprenda do zero em poucas semanas com aulas práticas.</p>
+        <button class="btn-prisma">Reservar</button>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <h3>Conserto de Celulares 📱</h3>
+        <p>Troca de tela, bateria e otimização de sistema.</p>
+        <button class="btn-prisma">Reservar</button>
+      </div>
+      <div class="card">
+        <h3>Design de Logos 🎨</h3>
+        <p>Criação de identidade visual moderna para seu projeto.</p>
+        <button class="btn-prisma">Reservar</button>
+      </div>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>Contato</p>
-    <p>Redes sociais</p>
+    <div>Contato</div>
+    <div class="prismas-footer">
+      <div class="prisma"></div>
+      <div class="prisma"></div>
+      <div class="prisma"></div>
+    </div>
+    <div>Redes sociais</div>
   </footer>
+
+  <!-- MODAL LOGIN -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content anim-login">
+      <h2>Login</h2>
+      <input type="text" placeholder="Usuário">
+      <input type="password" placeholder="Senha">
+      <button>Entrar</button>
+      <button class="close">Fechar</button>
+    </div>
+  </div>
+
+  <!-- MODAL CADASTRO -->
+  <div class="modal" id="cadastroModal">
+    <div class="modal-content anim-cadastro">
+      <h2>Cadastro</h2>
+      <input type="text" placeholder="Nome completo">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Senha">
+      <button>Cadastrar</button>
+      <button class="close">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
